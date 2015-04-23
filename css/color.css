@@ -1,0 +1,328 @@
+/*-------------------------------------------------------------------------------*/
+/*    1.2 BASIC / TYPOGRAFY STYLE                                                */
+/*-------------------------------------------------------------------------------*/
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #444a95;
+}
+
+.button-scroll:hover,
+.button-scroll:focus {
+    background-color: rgba(249, 211, 0, 0.8);
+    border-color: #444a95;
+}
+
+.form-control:focus {
+    border-color: #444a95;
+    -webkit-box-shadow: outset 0 0 8px rgba(249, 211, 0, 0.6);
+    -moz-box-shadow: outset 0 0 8px rgba(249, 211, 0, 0.6);
+    box-shadow: outset 0 0 8px rgba(249, 211, 0, 0.6);
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.2b SPINNER STYLE                                                     */
+/*-------------------------------------------------------------------------------*/
+
+.ui-spinner a.ui-spinner-up,
+.ui-spinner a.ui-spinner-down {
+    background: #444a95;
+    border: 1px solid #444a95;
+}
+
+.ui-spinner .ui-icon {
+    color: #FFF;
+}
+
+.ui-spinner .ui-icon:hover,
+.ui-spinner .ui-icon:focus {
+    color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.2c DATEPICKER STYLE                                                  */
+/*-------------------------------------------------------------------------------*/
+
+.datepicker > .datepicker_header {
+    border-top: 4px solid #444a95;
+}
+
+.datepicker > .datepicker_header > a:hover {
+    background-color: #444a95;
+}
+
+.datepicker > .datepicker_inner_container > .datepicker_calendar .datepicker_table > tbody > tr > td.active,
+.datepicker > .datepicker_inner_container > .datepicker_calendar .datepicker_table > tbody > tr > td:hover {
+    background-color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.6 BUTTON                                                             */
+/*-------------------------------------------------------------------------------*/
+
+.btn-default {
+    background-color: #444a95;
+    border-color: #444a95;
+    color: #FFF;
+}
+
+.open > .dropdown-toggle.btn-reverse {
+    background-color: #444a95;
+    border-color: #444a95;
+    color: #FFF;
+}
+
+.btn-reverse.active,
+.btn-reverse.focus,
+.btn-reverse:active,
+.btn-reverse:focus,
+.btn-reverse:hover {
+    background-color: #444a95;
+    border-color: #444a95;
+    color: #FFF;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.8 NAVBAR STYLE                                                       */
+/*-------------------------------------------------------------------------------*/
+
+nav.menu-nav li a {
+    color: #333333;
+}
+
+nav.menu-nav > ul a:hover,
+nav.menu-nav > ul a:focus {
+    background-color: #444a95;
+    color: #FFF;
+}
+
+nav.menu-nav > ul ul {
+    border-top: 1px solid #444a95;
+    border-bottom: 1px solid #444a95;
+}
+
+nav.menu-nav > ul .submenu.menu-active {
+    background-color: #444a95;
+}
+
+nav.menu-nav > ul .menu-active {
+    background-color: #444a95;
+    color: #FFF;
+}
+
+nav.menu-nav > ul .menu-active a {
+    background-color: #444a95;
+    color: #FFF;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.9 BREADCRUMBS STYLE                                                  */
+/*-------------------------------------------------------------------------------*/
+#breadcrumbs a:hover,
+#breadcrumbs a:focus {
+    background-color: #444a95;
+    border: 1px solid #444a95;
+    color: #FFF;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.10 PAGINATION STYLE                                                  */
+/*-------------------------------------------------------------------------------*/
+
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+    background-color: #444a95;
+    border-color: #444a95;
+    color: #FFF;
+}
+
+.pagination > li > a.active {
+    background-color: #444a95;
+    border-color: #444a95;
+    color: #FFF;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        2.5 HOME CONTACT STYLE                                                 */
+/*-------------------------------------------------------------------------------*/
+
+#contact .block-container .box-header .icon-container:hover {
+    background-color: rgba(249, 211, 0, 0.7);
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        2.6 HOME FEEDBACK STYLE                                                */
+/*-------------------------------------------------------------------------------*/
+
+.feedback-user .vote {
+    color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        2.7 HOME NEWSLETTER STYLE                                              */
+/*-------------------------------------------------------------------------------*/
+
+#newsletter:after {
+    background-color: rgba(249, 211, 0, 0.7);
+}
+
+#newsletter .input-group .input-group-addon {
+    background-color: #444a95;
+    border-color: #444a95;
+}
+
+#newsletter .input-group button,
+#newsletter .input-group .form-control {
+    border-color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        1.11 FOOTER STYLE                                                      */
+/*-------------------------------------------------------------------------------*/
+
+#footer-page a:hover,
+#footer-page a:focus {
+    color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.1 HEADER PAGES STYLE                                                 */
+/*-------------------------------------------------------------------------------*/
+
+#header-pages.simple-header h1 b {
+    background-color: #444a95;
+    border: 1px solid #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.5.3 PROGRESS BAR STYLE                                               */
+/*-------------------------------------------------------------------------------*/
+
+.progress-bar-mod .progress-bar {
+    background-color: #444a95;
+    box-shadow: none;
+    position: auto;
+    z-index: 2;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.5.1 ACCORDION STYLE                                                  */
+/*-------------------------------------------------------------------------------*/
+
+.accordion > h3,
+.toggle > h3 {
+    border-left: 6px solid #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.5.6 TAB AND PILLS STYLE                                              */
+/*-------------------------------------------------------------------------------*/
+
+.tab-mod .nav > li > a:focus,
+.tab-mod .nav > li > a:hover {
+    background-color: #444a95;
+    border-color: #444a95;
+}
+
+.tab-mod .nav-tabs > li.active > a,
+.tab-mod .nav-tabs > li.active > a:focus,
+.tab-mod .nav-tabs > li.active > a:hover {
+    border-color: #444a95;
+    border-bottom-color: #FFF;
+}
+
+.tab-mod .tab-pane {
+    border-color: #444a95;
+    border-bottom-color: #444a95;
+}
+
+.pillsmod li a:hover,
+.pillsmod li a:focus {
+    border-color: #444a95;
+}
+
+.pillsmod li.active a,
+.pillsmod li.active a:hover,
+.pillsmod li.active a:focus {
+    background-color: #444a95;
+    border-color: #444a95;
+}
+
+.pillsmod .tab-content {
+    border-top-color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.5.4 MEDIA LIST AND PANELS STYLE                                      */
+/*-------------------------------------------------------------------------------*/
+
+.medialist .media-body .media-heading .reply:hover,
+.medialist .media-body .media-heading .reply:focus {
+    background-color: #444a95;
+}
+
+.medialist .media-body .media-heading .reply:hover span,
+.medialist .media-body .media-heading .reply:focus span {
+    color: #FFF;
+}
+
+.panelmod .panel-heading {
+    background-color: #444a95;
+    border-color: #444a95;
+}
+
+.panelmod .panel-footer {
+    background-color: #444a95;
+    border-color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.7 BLOG PAGES STYLE                                                   */
+/*-------------------------------------------------------------------------------*/
+
+#blog-column .tags ul li a:hover,
+#blog-column .tags ul li a:focus {
+    background-color: #444a95;
+    border: 1px solid #444a95;
+}
+
+article .blog-item-media:hover {
+    border-top: 3px solid #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.12 ROOMS PAGE STYLE                                                  */
+/*-------------------------------------------------------------------------------*/
+
+#room .room-image {
+    border-top: 4px solid #444a95;
+}
+
+#room .image-header h1 {
+    border-left: 5px solid #444a95;
+}
+
+#room .gallery-block h4 {
+    border-bottom: 3px solid #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.14 TEAM PAGE STYLE                                                   */
+/*-------------------------------------------------------------------------------*/
+
+#team-list .team-role:hover,
+#team-list .team-role:focus {
+    background-color: #444a95;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*        3.4 WIDGET GALLERY STYLE                                               */
+/*-------------------------------------------------------------------------------*/
+
+.gallery-block .image-gallery .cover {
+    background-color: rgba(249, 211, 0, 0.7);
+}
