@@ -21,7 +21,7 @@
 			overviewMapControl: false,
 
 			// The latitude and longitude to center the map (always required)
-			center: new google.maps.LatLng(40.6700, -73.9400), // New York
+			center: new google.maps.LatLng(-20.8241299,-49.5280072), // São Paulo
 
 
 			// How you would like to style the map. 

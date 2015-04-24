@@ -9,6 +9,9 @@
  /* estilos personalizados do template */
 .title-pad-top { padding-top: 45px;}
 
+
+img { max-width: 100%;}
+
 /*-------------------------------------------------------------------------------*/
 /*                                                                               */
 /*        FEEDBACK DESTAQUES                                                     */
@@ -568,6 +571,10 @@ body,
     padding-bottom: 0;
 }
 
+#work:after {
+
+}
+
 #work .container {
     position: relative;
     z-index: 1;
@@ -649,6 +656,16 @@ body,
 
 input, select, textarea { background-color: #41499C!important; color: #FFF!important;}
 
+input[type="file"] {
+    cursor: pointer;
+    display: block;
+    font-size: 999px;
+    opacity: 1;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    background: url(../img/bg_input_file.jpg) no-repeat center center;
+}
 
 /*-------------------------------------------------------------------------------*/
 /*                                                                               */
@@ -937,4 +954,54 @@ input, select, textarea { background-color: #41499C!important; color: #FFF!impor
 #contact .block-container .form-container .form-control {
     border-color: #DDD;
     margin-bottom: 20px;
+}
+
+#contact input, #contact select,  #contact textarea { background-color: #FFF!important; color: #9f9f9f!important;}
+
+
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        FOOTER                                                                 */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#footer-page {
+    background-color: #444a95;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+#footer-page a {
+    display: block;
+    color: #FFF;
+    background: none;
+    padding-left: 0;
+}
+
+#footer-page a:hover,
+#footer-page a:focus {
+    color: #FFF;
+    text-decoration: none;
+    padding-left: 0;
+}
+
+#footer-page .logo {
+    display: block;
+    float: left;
+    margin: 0;
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        SECTION STYLE                                                      */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+section {
+    padding: 100px 0;
+}
+
+section#slider {
+    padding: 100px 0 0;
 }
