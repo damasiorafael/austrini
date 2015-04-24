@@ -92,6 +92,18 @@
 /* ANIMATE EFFECT  ------------------------------------------------------------------- */
 	new WOW().init();
 
+/* COLORBOX        ------------------------------------------------------------------- */
+$(".box-salas").colorbox({
+	rel: "box-salas"
+});
+
+$(".box-cozinhas").colorbox({
+	rel: "box-cozinhas"
+});
+
+$(".box-banheiros").colorbox({
+	rel: "box-banheiros"
+});
 
 /* GRID A LICIOUS  ------------------------------------------------------------------- */
 	$("#article-list", document.body).gridalicious({
