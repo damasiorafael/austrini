@@ -1240,66 +1240,6 @@ header {
     width: calc(100% - 1px)!important;
 }
 
-/*-------------------------------------------------------------------------------*/
-/*                                                                               */
-/*        2.6.1 HOME DESTAQUES STYLE                                                */
-/*                                                                               */
-/*-------------------------------------------------------------------------------*/
-
-#destaques #carousel-feedback .carousel-control-container {
-    height: 60px;
-    position: absolute;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: 0;
-    z-index: 4;
-    width: 100%;
-}
-
-#destaques #carousel-feedback .carousel-control-container a {
-    background-image: none;
-    color: #000;
-    width: 50%;
-}
-
-#destaques #carousel-feedback .carousel-control-container a.left span,
-#destaques #carousel-feedback .carousel-control-container a.right span {
-    font-size: 30px;
-    position: absolute;
-    top: 10px;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    z-index: 1;
-}
-
-#destaques #carousel-feedback .carousel-control-container a.left span {
-    right: 10%;
-}
-
-#destaques #carousel-feedback .carousel-control-container a.right span {
-    left: 10%;
-}
-
-#destaques #carousel-feedback .carousel-indicators {
-    z-index: 3;
-    bottom: -48px;
-}
-
-#destaques #carousel-feedback .carousel-indicators li {
-    border: 1px solid #888;
-    -webkit-border-radius: 2px;
-    -khtml-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -o-border-radius: 2px;
-    border-radius: 2px;
-}
-
-#destaques #carousel-feedback .carousel-indicators li.active {
-    background-color: #888888;
-}
-
 .feedback-user {
     text-align: center;
     margin-top: 100px;

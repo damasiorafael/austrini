@@ -11,9 +11,89 @@
 
 /*-------------------------------------------------------------------------------*/
 /*                                                                               */
+/*        FEEDBACK DESTAQUES                                                     */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#destaques #carousel-feedback .carousel-control-container {
+    height: 60px;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+}
+
+#destaques #carousel-feedback .carousel-control-container a {
+    background-image: none;
+    color: #000;
+    width: 50%;
+}
+
+#destaques #carousel-feedback .carousel-control-container a.left span,
+#destaques #carousel-feedback .carousel-control-container a.right span {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+}
+
+#destaques #carousel-feedback .carousel-control-container a.left span {
+    right: 10%;
+}
+
+#destaques #carousel-feedback .carousel-control-container a.right span {
+    left: 10%;
+}
+
+#destaques #carousel-feedback .carousel-indicators {
+    z-index: 3;
+    bottom: -48px;
+}
+
+#destaques #carousel-feedback .carousel-indicators li {
+    border: 1px solid #888;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#destaques #carousel-feedback .carousel-indicators li.active {
+    background-color: #888888;
+}
+
+#destaques .feedback-user .text {
+    border: 1px solid #E5E5E5;
+    border-top: none;
+    display: block;
+    padding: 10px 10px 16px;
+    font-size: 14px;
+    line-height: 16px;
+
+}
+
+.feedback-user .img-circle {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    height: 180px;
+    margin-top: -100px;
+    padding: 7px;
+    width: 180px;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
 /*        NOTICIAS DESTAQUE                                                      */
 /*                                                                               */
 /*-------------------------------------------------------------------------------*/
+
 #destaques .post {
     position: relative;
     padding-bottom: 20px;
@@ -41,6 +121,10 @@
     background-color: #ffffff;
     border-left: 1px solid #EFEFEF;
     border-right: 1px solid #EFEFEF;
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 16px;
 }
 
 #destaques .post-date {
@@ -90,11 +174,6 @@
     margin-left: -20px;
 }
 
-#destaques .post-container {
-    display: block;
-    padding: 20px;
-}
-
 /*-------------------------------------------------------------------------------*/
 /*                                                                               */
 /*        NOTICIAS DESTAQUE                                                      */
@@ -134,6 +213,10 @@ body,
   -webkit-transition-property: opacity;
           transition-property: opacity;
 }
+
+.carousel-fade .carousel-inner .item img {
+    border: 13px solid #F1F3F2!important;
+}
 .carousel-fade .carousel-inner .active {
   opacity: 1;
 }
@@ -156,4 +239,141 @@ body,
 .carousel-inner,
 .carousel-inner .item {
   height: 100%;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        ABOUT HOME                                                             */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#destaques section {
+    background-color: #6c6e6c;
+    color: #FFF;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+#destaques section a {
+    display: block;
+    color: #EEE;
+    background: url(../images/arrow.png) no-repeat scroll left 5px;
+    padding-left: 15px;
+}
+
+#destaques section a:hover,
+#destaques section a:focus {
+    color: #06d0d8;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+#destaques .logo {
+    display: block;
+    float: left;
+    margin: 6px 10px 25px 0;
+    text-align: center;
+}
+
+#destaques .title {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px dotted #AAA;
+}
+
+#destaques .text {
+    display: block;
+    padding-bottom: 20px;
+}
+
+#destaques .text:after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#destaques ul.social-icons {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+}
+
+#destaques ul.social-icons li {
+    float: left;
+}
+
+#destaques ul.social-icons li a {
+    background: url(../images/social-icon.png) no-repeat scroll center center #ffffff;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 10px 20px 0;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#destaques ul.social-icons li a.twitter-icon {
+    background-position: -8px -8px;
+}
+
+#destaques ul.social-icons li a.twitter-icon:hover {
+    background-position: -8px -61px;
+    background-color: #5ea9dd;
+}
+
+#destaques ul.social-icons li a.facebook-icon {
+    background-position: -164px -8px;
+}
+
+#destaques ul.social-icons li a.facebook-icon:hover {
+    background-position: -164px -61px;
+    background-color: #3b5998;
+}
+
+#destaques ul.social-icons li a.linkedin-icon {
+    background-position: -85px -8px;
+}
+
+#destaques ul.social-icons li a.linkedin-icon:hover {
+    background-position: -85px -61px;
+    background-color: #0077b5;
+}
+
+#destaques ul.social-icons li a.vimeo-icon {
+    background-position: -242px -6px;
+}
+
+#destaques ul.social-icons li a.vimeo-icon:hover {
+    background-position: -242px -59px;
+    background-color: #17b3e8;
+}
+
+#destaques ul.social-icons li a span {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: -2000px;
+    z-index: 1;
+}
+
+#destaques ul.link-extra {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#destaques .credits {
+    background-color: #555555;
+    color: #AAA;
+    font-size: 14px;
+    margin: 24px 0 0;
+    padding: 16px;
+    text-align: center;
 }
