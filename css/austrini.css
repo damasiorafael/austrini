@@ -547,3 +547,175 @@ body,
 #gestao .box button span {
     margin-right: 10px;
 }
+
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        TRABALHE CONOSCO                                                       */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#work {
+    height: 869px;
+    color: #FFF;
+    background: url(../img/bg_trabalhe.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-bottom: 0;
+}
+
+#work .container {
+    position: relative;
+    z-index: 1;
+}
+
+#work .form-container {
+    padding: 60px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    margin: 120px 0;
+    position: relative;
+    z-index: 2;
+    border-top: none;
+    color: #333;
+}
+
+#work .input-group {
+    text-align: center;
+    padding: 0 20px;
+}
+
+#work .input-group .input-group-addon {
+    background-color: #06d0d8;
+    border-color: #05a0a6;
+}
+
+#work .input-group button,
+#work .input-group .form-control {
+    font-size: 16px;
+    height: 40px;
+    border-color: #05a0a6;
+}
+
+#work .box-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 5px solid #FFF;
+    position: relative;
+    margin-bottom: 300px;
+    z-index: 2;
+}
+
+#work .box-header .icon-container {
+    float: left;
+    text-align: center;
+    width: 33.3333%;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    margin-top: 4px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#work .box-header .icon-container:hover {
+    background-color: rgba(6, 208, 216, 0.7);
+}
+
+#work .box-header .icon-container .icon {
+    display: block;
+    font-size: 35px;
+    padding: 10px 0;
+}
+
+#work .form-container .form-control {
+    border-color: #DDD;
+    margin-bottom: 20px;
+}
+
+.pad-right { padding-right: 30px;}
+
+button, input, select, textarea { background-color: #41499C!important; color: #FFF!important;}
+
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        2.5 HOME CONTACT STYLE                                                 */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#contact {
+    padding-bottom: 0;
+}
+
+#contact .block-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact .block-container .box-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 5px solid #FFF;
+    position: relative;
+    margin-bottom: 300px;
+    z-index: 2;
+}
+
+#contact .block-container .box-header .icon-container {
+    float: left;
+    text-align: center;
+    width: 33.3333%;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    margin-top: 4px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+#contact .block-container .box-header .icon-container:hover {
+    background-color: rgba(6, 208, 216, 0.7);
+}
+
+#contact .block-container .box-header .icon-container .icon {
+    display: block;
+    font-size: 35px;
+    padding: 10px 0;
+}
+
+#contact .block-container .maps-container {
+    position: absolute;
+    top: -300px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#contact .block-container .form-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 2;
+    border-top: 5px solid #FFF;
+    color: #333;
+    padding: 50px 0 100px;
+}
+
+#contact .block-container .form-container .form-control {
+    border-color: #DDD;
+    margin-bottom: 20px;
+}
