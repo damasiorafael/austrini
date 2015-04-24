@@ -377,3 +377,173 @@ body,
     padding: 16px;
     text-align: center;
 }
+
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        EMPRESA                                                                */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+.section-empresa { background: url(../img/bg_empresa.jpg) no-repeat 0 0; padding-top: 30px; position: relative;}
+.box-empresa { width: 100%; height: 682px; background: #FFF; margin-top: 60px; position: absolute; z-index: 9;}
+.opacity { opacity: .70}
+.box-shadow { box-shadow: 1px 1px 2px rgba(153, 153, 153, 0.5);}
+.text-empresa { width: 100%; height: 682px; margin-top: 60px; position: relative; z-index: 10;}
+.text-empresa p { padding: 18px 0 0 18px; font-size: 14px; line-height: 18px;}
+
+.section-empresa .figure { width: calc(100% - 40px); margin: 210px auto 0;}
+.section-empresa .figure img { max-width: 100%; display: block;}
+.section-empresa .figure .figcaption { font-size: 12px; line-height: 16px; background: #FFF; width: 100%; padding: 10px;}
+
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        GESTAO DE PESSOAS                                                      */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+
+#gestao .box {
+    position: relative;
+    border: 1px solid #E5E5E5;
+    margin-top: 210px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#gestao .box .circular-image {
+    height: 150px;
+    margin-left: -100px;
+    width: 200px;
+    position: absolute;
+    top: -100px;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    z-index: 2;
+}
+
+#gestao .box .circular-image img {
+    width: 200px;
+    border: 1px solid #DDD;
+    padding: 6px;
+    background-color: #ffffff;
+}
+
+#gestao .box .title,
+#gestao .box .text {
+    text-align: center;
+    display: block;
+}
+
+#gestao .box .title {
+    background: url('http://placehold.it/1024') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-bottom: 1px solid #E6E6E6;
+    padding-top: 130px;
+}
+
+#gestao .box .title span {
+    text-transform: uppercase;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+#gestao .box .text {
+    padding: 20px 10px;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+#gestao .box .detail {
+    text-align: left;
+    padding: 0;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    height: 65px;
+    background-color: #f7f7f7;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+#gestao .box .detail li {
+    padding: 8px 8px 8px 26px;
+    color: #666;
+    width: 27%;
+    float: left;
+    position: relative;
+}
+
+#gestao .box .detail li:after,
+#gestao .box .detail li:before {
+    position: absolute;
+    top: -10px;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 44px solid transparent;
+    border-bottom: 44px solid transparent;
+    border-left: 20px solid #F7F7F7;
+}
+
+#gestao .box .detail li:after {
+    right: -2px;
+}
+
+#gestao .box .detail li:before {
+    right: -6px;
+    border-left-color: #FFF;
+}
+
+#gestao .box .detail li:last-child {
+    width: 40%;
+    font-size: 34px;
+    padding: 8px 30px 0 0;
+    line-height: 1.3;
+    font-weight: 600;
+    text-align: right;
+    float: right;
+}
+
+#gestao .box .detail li:last-child:before {
+    border: none;
+}
+
+#gestao .box .detail b {
+    display: block;
+}
+
+#gestao .box button {
+    padding: 18px 0;
+    width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+#gestao .box button span {
+    margin-right: 10px;
+}
