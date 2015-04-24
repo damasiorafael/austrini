@@ -1,0 +1,159 @@
+/*
+ * Nome: austrini.css
+ * Desenvolvido por: Rafael Damasio (Phorma Design)
+ * Data da Criacao: 15-04-2015
+ * Copyright (c) 2015 - Phorma Design
+ * Versao: 3.0.0
+ */
+ 
+ /* estilos personalizados do template */
+.title-pad-top { padding-top: 45px;}
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        NOTICIAS DESTAQUE                                                      */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+#destaques .post {
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 10px;
+}
+
+#destaques .post header,
+#destaques .post footer {
+    background-color: #ffffff;
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+}
+
+#destaques .post footer {
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+#destaques .post img {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+}
+
+#destaques .post-container {
+    background-color: #ffffff;
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+}
+
+#destaques .post-date {
+    position: absolute;
+    top: 10px;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border: 1px solid #FFF;
+    border-left: none;
+    color: #333;
+    display: block;
+}
+
+#destaques .post-author {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    padding: 6px 0;
+    color: #AAA;
+}
+
+#destaques .post-title {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 0 16px;
+    position: relative;
+    font-weight: 400;
+}
+
+#destaques .post-title:after {
+    background: none repeat scroll 0 0 #DDD;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    content: "";
+    height: 1px;
+    width: 40px;
+    margin-left: -20px;
+}
+
+#destaques .post-container {
+    display: block;
+    padding: 20px;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*                                                                               */
+/*        NOTICIAS DESTAQUE                                                      */
+/*                                                                               */
+/*-------------------------------------------------------------------------------*/
+.carousel-2-fade .carousel-2-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+}
+.carousel-2-fade .carousel-2-inner .active {
+  opacity: 1;
+}
+.carousel-2-fade .carousel-2-inner .active.left,
+.carousel-2-fade .carousel-2-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-2-fade .carousel-2-inner .next.left,
+.carousel-2-fade .carousel-2-inner .prev.right {
+  opacity: 1;
+}
+.carousel-2-fade .carousel-2-control {
+  z-index: 2;
+}
+html,
+body,
+.carousel-2,
+.carousel-2-inner,
+.carousel-2-inner .item {
+  height: 100%;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
