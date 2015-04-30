@@ -16,12 +16,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Banners
+                        Eventos
                         <small>Adicionar/Editar</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="banners.php"><i class="fa fa-file-image-o"></i> Banners</a></li>
+                        <li><a href="eventos.php"><i class="fa fa-file-image-o"></i> Eventos</a></li>
                         <li class="active">Adicionar/Editar</li>
                     </ol>
                 </section>
@@ -33,17 +33,17 @@
                             <div class="box box-primary">
                                 <div class="box-header">
                                     <?php if($id != "" && $acao != ""){ ?>
-                                        <h3 class="box-title">Editar Banner</h3>
+                                        <h3 class="box-title">Editar Evento</h3>
                                     <?php } else { ?>
-                                        <h3 class="box-title">Adicionar Banner</h3>
+                                        <h3 class="box-title">Adicionar Evento</h3>
                                     <?php } ?>
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form action="banners-acoes.php" method="post" enctype="multipart/form-data" validate>
+                                <form action="eventos-acoes.php" method="post" enctype="multipart/form-data" validate>
                                     <div class="box-body">
                                         <div class="form-group">
                                             <?php if($id != "" && $acao != ""){
-                                                    $sqlConsulta    = "SELECT * FROM galerias WHERE id = $id AND status = 1";
+                                                    $sqlConsulta    = "SELECT * FROM eventos WHERE id = $id AND status = 1";
                                                     $resultConsulta = consulta_db($sqlConsulta);
                                                     $num_rows       = mysql_num_rows($resultConsulta);
                                                     while($consulta = mysql_fetch_object($resultConsulta)){
@@ -64,7 +64,7 @@
                                             <?php } ?>
                                             <input type="file" id="imagem" name="imagem" required /><br />
                                             <div class="callout callout-danger">
-                                                <h4>A imagem deve ter o tamanho exato de 1920 x 880 pixels e ter menos de 2MB.</h4>
+                                                <h4>A imagem deve ser maior que 1024 x 715 pixels, respeitar essa proporção e ter menos de 1MB.</h4>
                                             </div>
                                         </div>
                                     </div><!-- /.box-body -->

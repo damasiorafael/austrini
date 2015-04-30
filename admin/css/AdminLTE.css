@@ -3631,5 +3631,14 @@ fieldset[disabled] .btn-vk.active {
 }
 
 .bg-austrini {
-  background-color: #444a95!important;
+    background-color: #444a95!important;
+}
+
+.img-edit {
+    width: 200px;
+    margin: 15px 0;
+}
+
+img {
+    max-width: 100%;
 }

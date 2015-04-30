@@ -11,12 +11,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Banners
+                        Notícias
                         <small>Austrini</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Banners</li>
+                        <li class="active">Notícias</li>
                     </ol>
                 </section>
 
@@ -26,14 +26,16 @@
                         <div class="col-xs-12">
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">Lista de Banners</h3>
+                                    <h3 class="box-title">Lista de Notícias</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
-                                    <a href="banners-add-edit.php" class="btn btn-success btn-lg btn-adicionar pull-right"><i class="fa fa-plus"></i> Adicionar</a>
+                                    <a href="noticias-add-edit.php" class="btn btn-success btn-lg btn-adicionar pull-right"><i class="fa fa-plus"></i> Adicionar</a>
                                     <table id="example2" class="table table-bordered table-hover table-austrini">
                                         <thead>
                                             <tr>
                                                 <th class="th-id">ID</th>
+                                                <th class="th-titulo">Título</th>
+                                                <th class="th-texto">Texto</th>
                                                 <th>Imagem</th>
                                                 <th class="th-data">Data</th>
                                                 <th class="th-status">Status</th>
@@ -42,13 +44,15 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $sqlConsulta    = "SELECT * FROM galerias";
+                                                $sqlConsulta    = "SELECT * FROM noticias";
                                                 $resultConsulta = consulta_db($sqlConsulta);
                                                 $num_rows       = mysql_num_rows($resultConsulta);
                                                 while($consulta = mysql_fetch_object($resultConsulta)){
                                             ?>
                                             <tr>
                                                 <td class="content-id"><?php echo $consulta->id; ?></td>
+                                                <td class="content-titulo"><?php echo $consulta->titulo; ?></td>
+                                                <td class="content-texto"><?php echo $consulta->texto; ?></td>
                                                 <td class="content-img">
                                                     <img src="../uploads/<?php echo $consulta->imagem; ?>" />
                                                 </td>
@@ -66,8 +70,8 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td class="content-botoes-acoes">
-                                                    <a href="banners-add-edit.php?id=<?php echo $consulta->id; ?>&acao=edit" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar</a>
-                                                    <a href="banners-acoes.php?id=<?php echo $consulta->id; ?>&acao=delete" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-times"></i> Excluir</a>
+                                                    <a href="noticias-add-edit.php?id=<?php echo $consulta->id; ?>&acao=edit" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar</a>
+                                                    <a href="noticias-acoes.php?id=<?php echo $consulta->id; ?>&acao=delete" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-times"></i> Excluir</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -75,6 +79,8 @@
                                         <tfoot>
                                             <tr>
                                                 <th class="th-id">ID</th>
+                                                <th class="th-titulo">Título</th>
+                                                <th class="th-texto">Texto</th>
                                                 <th>Imagem</th>
                                                 <th class="th-data">Data</th>
                                                 <th class="th-status">Status</th>

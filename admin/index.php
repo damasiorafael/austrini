@@ -57,7 +57,7 @@
                                 <div class="icon">
                                     <i class="fa fa-calendar-o"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="eventos.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -76,7 +76,7 @@
                                 <div class="icon">
                                     <i class="fa fa-laptop"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="noticias.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -95,7 +95,7 @@
                                 <div class="icon">
                                     <i class="fa fa-edit"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="notas.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

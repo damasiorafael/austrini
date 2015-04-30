@@ -16,12 +16,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Banners
+                        Notas dos Arquitetos
                         <small>Adicionar/Editar</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="banners.php"><i class="fa fa-file-image-o"></i> Banners</a></li>
+                        <li><a href="notas.php"><i class="fa fa-file-image-o"></i> Notas dos Arquitetos</a></li>
                         <li class="active">Adicionar/Editar</li>
                     </ol>
                 </section>
@@ -33,21 +33,29 @@
                             <div class="box box-primary">
                                 <div class="box-header">
                                     <?php if($id != "" && $acao != ""){ ?>
-                                        <h3 class="box-title">Editar Banner</h3>
+                                        <h3 class="box-title">Editar Notas dos Arquitetos</h3>
                                     <?php } else { ?>
-                                        <h3 class="box-title">Adicionar Banner</h3>
+                                        <h3 class="box-title">Adicionar Notas dos Arquitetos</h3>
                                     <?php } ?>
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form action="banners-acoes.php" method="post" enctype="multipart/form-data" validate>
+                                <form action="notas-acoes.php" method="post" enctype="multipart/form-data" validate>
                                     <div class="box-body">
-                                        <div class="form-group">
                                             <?php if($id != "" && $acao != ""){
-                                                    $sqlConsulta    = "SELECT * FROM galerias WHERE id = $id AND status = 1";
-                                                    $resultConsulta = consulta_db($sqlConsulta);
-                                                    $num_rows       = mysql_num_rows($resultConsulta);
-                                                    while($consulta = mysql_fetch_object($resultConsulta)){
+                                                $sqlConsulta    = "SELECT * FROM notas WHERE id = $id AND status = 1";
+                                                $resultConsulta = consulta_db($sqlConsulta);
+                                                $num_rows       = mysql_num_rows($resultConsulta);
+                                                while($consulta = mysql_fetch_object($resultConsulta)){
                                             ?>
+                                                    <div class="form-group">
+                                                        <label for="nome">Nome</label>
+                                                        <input type="text" placeholder="Nome" id="nome" name="nome" class="form-control" value="<?php echo $consulta->nome; ?>" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nota">Nota</label>
+                                                        <input type="text" placeholder="Nota" id="nota" name="nota" class="form-control" value="<?php echo $consulta->nota; ?>" required>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <div class="img-edit">
                                                             <img src="../uploads/<?php echo $consulta->imagem; ?>" />
                                                         </div>
@@ -55,8 +63,18 @@
                                                         <input type="hidden" id="acao" name="acao" value="edit" required />
                                             <?php
                                                     }
-                                                }
+                                                } else {
                                             ?>
+                                            <div class="form-group">
+                                                <label for="nome">Nome</label>
+                                                <input type="text" placeholder="Nome" id="nome" name="nome" class="form-control" value="" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="nota">Nota</label>
+                                                <input type="text" placeholder="Nota" id="nota" name="nota" class="form-control" value="" required>
+                                            </div>
+                                            <div class="form-group">
+                                            <?php } ?>
                                             <?php if($id != "" && $acao != ""){ ?>
                                                 <label for="imagem">Altere a imagem</label>
                                             <?php } else { ?>
@@ -64,7 +82,7 @@
                                             <?php } ?>
                                             <input type="file" id="imagem" name="imagem" required /><br />
                                             <div class="callout callout-danger">
-                                                <h4>A imagem deve ter o tamanho exato de 1920 x 880 pixels e ter menos de 2MB.</h4>
+                                                <h4>A imagem deve o tamanho de 200 x 200 pixels e ter menos de 500KB.</h4>
                                             </div>
                                         </div>
                                     </div><!-- /.box-body -->

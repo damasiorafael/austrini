@@ -12,17 +12,17 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="eventos.php">
                     <i class="fa fa-calendar-o"></i> <span>Eventos</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="noticias.php">
                     <i class="fa fa-laptop"></i> <span>Notícias</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="notas.php">
                     <i class="fa fa-edit"></i> <span>Notas dos Arquitetos</span>
                 </a>
             </li>

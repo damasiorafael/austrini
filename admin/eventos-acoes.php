@@ -9,17 +9,17 @@
     $arrayImagens   = $_FILES['imagem'];
     
     function insere($nome_atual){
-        $sqlInsere = "INSERT INTO galerias (imagem, data) VALUES ('$nome_atual', NOW());";
+        $sqlInsere = "INSERT INTO eventos (imagem, data) VALUES ('$nome_atual', NOW());";
         return insert_db($sqlInsere);
     }
 
     function edita($nome_atual, $id){
-        $sqlEdita = "UPDATE galerias SET imagem = '$nome_atual', data = NOW() WHERE id = $id;";
+        $sqlEdita = "UPDATE eventos SET imagem = '$nome_atual', data = NOW() WHERE id = $id;";
         return edita_db($sqlEdita);
     }
 
     function deletaArquivo($id){
-        $sqlConsulta    = "SELECT imagem FROM galerias WHERE id = $id";
+        $sqlConsulta    = "SELECT imagem FROM eventos WHERE id = $id";
         $resultConsulta = consulta_db($sqlConsulta);
         while($consulta = mysql_fetch_object($resultConsulta)){
             $arquivo = "../uploads/".$consulta->imagem;
@@ -33,7 +33,7 @@
 
     function deletaItem($id){
         if(deletaArquivo($id)){
-            $sqlDelete = "DELETE FROM galerias WHERE id = $id";
+            $sqlDelete = "DELETE FROM eventos WHERE id = $id";
             if(deleta_db($sqlDelete)){
                 return true;
             } else {
@@ -60,14 +60,14 @@
         $ext = strtolower(strrchr($nome_imagem,"."));
 
         /* converte o tamanho para KB */
-        $tamanho = round($tamanho_imagem / 2048);
+        $tamanho = round($tamanho_imagem / 1024);
             
         /*  verifica se a extensão está entre as extensões permitidas */
         if(in_array($ext,$permitidos)){
             //testa as dimensoes da imagem
-            if($largura == 1920 && $altura == 880){
+            if($largura >= 1024){
                 //testa o tamanho em pixels da imagem
-                if($tamanho < 2048){ //se imagem for até 2MB envia
+                if($tamanho < 1024){ //se imagem for até 1MB envia
                     $nome_atual = md5(uniqid(time())).$ext; //nome que dará a imagem
                     $tmp = $arrayImagens['tmp_name']; //caminho temporário da imagem
 
@@ -102,7 +102,7 @@
             //echo "Somente são aceitos arquivos do tipo Imagem";
             echo "<script type='text/javascript'>alert('Somente são aceitos arquivos do tipo Imagem!'); //history.back();</script>";
             */
-        echo "<script type='text/javascript'>alert('Operação realizada com sucesso!'); window.location = 'banners.php';</script>";
+        echo "<script type='text/javascript'>alert('Operação realizada com sucesso!'); window.location = 'eventos.php';</script>";
         exit();
     }
     
@@ -112,7 +112,7 @@
         uploadImg($arrayImagens, $id, $acao);
     } else if($acao == "delete"){
         if(deletaItem($id)){
-            echo "<script type='text/javascript'>alert('Operação realizada com sucesso!'); window.location = 'banners.php';</script>";
+            echo "<script type='text/javascript'>alert('Operação realizada com sucesso!'); window.location = 'eventos.php';</script>";
         } else {
             echo "<script type='text/javascript'>alert('Erro ao deletar o arquivo!'); history.back();</script>";
         }
