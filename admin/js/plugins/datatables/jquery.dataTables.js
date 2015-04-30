@@ -2711,14 +2711,14 @@
 			 * sZeroRecords - assuming that is given.
 			 */
 			if ( !oLanguage.sEmptyTable && oLanguage.sZeroRecords &&
-				oDefaults.sEmptyTable === "No data available in table" )
+				oDefaults.sEmptyTable === "<div class=\"alert alert-warning alert-dismissable\"><i class=\"fa fa-warning\"></i><b>Nenhum registro encontrado!</b></div>")
 			{
 				_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sEmptyTable' );
 			}
 		
 			/* Likewise with loading records */
 			if ( !oLanguage.sLoadingRecords && oLanguage.sZeroRecords &&
-				oDefaults.sLoadingRecords === "Loading..." )
+				oDefaults.sLoadingRecords === "Carregando..." )
 			{
 				_fnMap( oLanguage, oLanguage, 'sZeroRecords', 'sLoadingRecords' );
 			}
@@ -9182,7 +9182,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "Primeira",
+				"sFirst": "First",
 			
 			
 				/**
@@ -9203,7 +9203,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Última",
+				"sLast": "Last",
 			
 			
 				/**
@@ -9224,7 +9224,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Próxima",
+				"sNext": "Próximo",
 			
 			
 				/**
@@ -9254,19 +9254,19 @@
 			 * parameter - if it is not given, the value of sZeroRecords will be used
 			 * instead (either the default or given value).
 			 *  @type string
-			 *  @default No data available in table
+			 *  @default Nenhum registro encontrado. Adicione Novos Registros!
 			 *  @dtopt Language
 			 * 
 			 *  @example
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "oLanguage": {
-			 *          "sEmptyTable": "No data available in table"
+			 *          "sEmptyTable": "Nenhum registro encontrado. Adicione Novos Registros!"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "Nenhum registro encontrado na tabela",
+			"sEmptyTable": "<div class=\"alert alert-warning alert-dismissable\"><i class=\"fa fa-warning\"></i><b>Nenhum registro encontrado!</b></div>",
 		
 		
 			/**
@@ -9326,7 +9326,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtrado de _MAX_ total de registros)",
+			"sInfoFiltered": "(filtered from _MAX_ total entries)",
 		
 		
 			/**
@@ -9407,7 +9407,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Mostrar _MENU_ registros",
+			"sLengthMenu": "Show _MENU_ entries",
 		
 		
 			/**
@@ -9429,7 +9429,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Carregando...",
+			"sLoadingRecords": "Loading...",
 		
 		
 			/**
@@ -9448,7 +9448,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processando...",
+			"sProcessing": "Processing...",
 		
 		
 			/**
@@ -9481,7 +9481,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Buscar:",
+			"sSearch": "Search:",
 		
 		
 			/**
@@ -9524,7 +9524,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "Nenhum registro encontrado"
+			"sZeroRecords": "No matching records found"
 		},
 	
 	

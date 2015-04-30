@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".label-danger").on("click", function(){
+	/*$(".label-danger").on("click", function(){
 		var conf = confirm("Deseja marcar essa mensagem como lida?");
 		if (conf == true) {
 			var $this = $(this);
@@ -307,4 +307,5 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+*/
 });

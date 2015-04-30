@@ -1,46 +1,20 @@
 <!-- header logo: style can be found in header.less -->
 <header class="header">
+    <a href="index.php" class="logo">
+        <!-- Add the class icon to your logo image or logo icon to add the margining -->
+        <img src="../img/logo_topo.jpg" />
+    </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
-                <div class="container-logo container-logo-internas">
-                    <a href="index.php" title="home" class="logo-home logo-home-admin">
-                        <span>home</span>
-                    </a>
-                </div>
-                <div class="container-menu-itens">
-                    <ul class="nav-menu menu-admin">
-                        <li class="user user-menu menu-right">
-                            <a href="index.php" class="dropdown-toggle">
-                                <i class="fa fa-envelope"></i>
-                                <span>Contatos</span>
-                            </a>
-                        </li>
-                        <li class="user user-menu menu-right">
-                            <a href="portfolios.php" class="dropdown-toggle">
-                                <i class="fa fa-th"></i>
-                                <span>Portfólios</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <?php
-                    $sqlConsultaStatus 		= "SELECT * FROM contato WHERE status = '0'";
-                    $resultConsultaStatus 	= consulta_db($sqlConsultaStatus);
-                    $numRowsStatus 			= mysql_num_rows($resultConsultaStatus);
-                ?>
-                <li class="dropdown messages-menu">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
-                        <i class="fa fa-envelope"></i>
-                        <span class="label label-success"><?php echo $numRowsStatus; ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">
-                            <a href="index.php" class="link-no-efeito">Você tem <?php echo $numRowsStatus; ?> mensagens não lidas</a>
-                        </li>
-                    </ul>
-                </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -52,8 +26,8 @@
                         <li class="user-header bg-light-blue">
                             <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                             <p>
-                                Bem vindo!
-                                <small>Admin</small>
+                                Austrini - Admin
+                                <small>copyright - Austrini &copy; 2015</small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
