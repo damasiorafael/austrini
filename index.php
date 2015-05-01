@@ -1,3 +1,4 @@
+<?php include_once("inc/config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,10 +75,13 @@
 	</nav>
 	<section id="slider">
 		<div class="slider nivoSlider" id="top">
-		    <img src="img/destaque-1.jpg" data-thumb="img/destaque-1.jpg" alt="" />
-	        <img src="img/destaque-2.jpg" data-thumb="img/destaque-2.jpg" alt="" />
-	        <img src="img/destaque-3.jpg" data-thumb="img/destaque-3.jpg" alt="" />
-	        <img src="img/destaque-4.jpg" data-thumb="img/destaque-4.jpg" alt="" />
+			<?php
+                $sqlConsultaBanners		= "SELECT imagem FROM galerias WHERE status = 1";
+                $resultConsultaBanners 	= consulta_db($sqlConsultaBanners);
+                while($consultaBanners 	= mysql_fetch_object($resultConsultaBanners)){
+            ?>
+		    		<img src="uploads/<?php echo $consultaBanners->imagem; ?>" />
+		    <?php } ?>
 		</div> 
 	</slider> <!-- /.slider -->
 	<section id="destaques">
@@ -90,21 +94,21 @@
 						<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
 							<!-- Carousel items -->
 							<div class="carousel-inner">
-								<div class="active item">
-									<a href="http://rafaeldamasio.com" title="asdfasdf">
-										<img src="img/eventos-1.jpg" alt="" />
-									</a>
-								</div>
-								<div class="item">
-									<a href="http://rafaeldamasio.com" title="asdfasdf">
-										<img src="img/eventos-2.jpg" alt="" />
-									</a>
-								</div>
-								<div class="item">
-									<a href="http://rafaeldamasio.com" title="asdfasdf">
-										<img src="img/eventos-3.jpg" alt="" />
-									</a>
-								</div>
+								<?php
+									$countEventos = 1;
+					                $sqlConsultaEventos		= "SELECT imagem FROM eventos WHERE status = 1";
+					                $resultConsultaEventos 	= consulta_db($sqlConsultaEventos);
+					                while($consultaEventos 	= mysql_fetch_object($resultConsultaEventos)){
+					            ?>
+										<div class="item <?php if($countEventos == 1) echo active; ?>">
+											<a href="uploads/<?php echo $consultaEventos->imagem; ?>" data-lightbox="eventos">
+												<img src="uploads/<?php echo $consultaEventos->imagem; ?>" />
+											</a>
+										</div>
+								<?php
+										$countEventos++;
+									}
+								?>
 							</div>
 						</div>
 					</article>
@@ -112,16 +116,21 @@
             	<div class="col-md-3">
                 	<h3 class="section-title title-pad-top">NOTÍCIAS</h3>
                     <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <header>
-                            <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                            <span class="post-date">1 Feb</span>
-                            <span class="post-author">Posted by Admin</span>
-                            <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                        </header>
-                        <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-                        <footer class="text-center">
-                            <a href="#noticias" class="btn btn-default">Ver mais</a>
-                        </footer>
+                    	<?php
+			                $sqlConsultaNoticias	= "SELECT *, date_format(data, '%d/%m') AS data FROM noticias WHERE status = 1 ORDER by id DESC LIMIT 1";
+			                $resultConsultaNoticias	= consulta_db($sqlConsultaNoticias);
+			                while($consultaNoticias	= mysql_fetch_object($resultConsultaNoticias)){
+			            ?>
+		                        <header>
+		                            <img src="uploads/<?php echo $consultaNoticias->imagem; ?>" class="img-responsive" alt="<?php echo $consultaNoticias->titulo; ?>" />
+		                            <span class="post-date"><?php echo formata_data_austrini($consultaNoticias->data); ?></span>
+		                            <h2 class="post-title"><?php echo $consultaNoticias->titulo; ?></h2>
+		                        </header>
+		                        <span class="post-container"><?php echo $consultaNoticias->texto; ?></span>
+		                        <footer class="text-center">
+		                            <a href="#noticias" class="btn btn-default">Ver mais</a>
+		                        </footer>
+		                <?php } ?>
                     </article>
                 </div>
 				<div class="col-md-3"><!-- Feedback Block -->
@@ -135,28 +144,28 @@
 					  </ol>
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" role="listbox">
-						<div class="item active"> <!-- Row 1 -->
-							<div class="row">
-							   <div class="col-lg-12">
-								  <div class="feedback-user wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.7s">
-									 <img src="img/destaque-arquitetos-1.png" class="img-circle" alt="Image sample" />
-									 <span class="name">Abby Jones</span>
-									 <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in urna vitae dolor suscipit elementum in pulvinar.</span>
-								  </div>
-							   </div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="row">
-							   <div class="col-lg-12">
-								  <div class="feedback-user">
-									 <img src="img/destaque-arquitetos-2.png" class="img-circle" alt="Image sample" />
-									 <span class="name">Abby Jones</span>
-									 <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in vitae dolor suscipit elementum in pulvinar neque.</span>
-								  </div>
-							   </div>
-							</div>
-						</div>
+
+						<?php
+					  		$countNotas = 1;
+			                $sqlConsultaNotas		= "SELECT *, date_format(data, '%d/%m') AS data FROM notas WHERE status = 1 ORDER by id DESC";
+			                $resultConsultaNotas 	= consulta_db($sqlConsultaNotas);
+			                while($consultaNotas	= mysql_fetch_object($resultConsultaNotas)){
+			            ?>
+								<div class="item <?php if($countNotas == 1) echo "active"; ?>"> <!-- Row 1 -->
+									<div class="row">
+									   <div class="col-lg-12">
+										  <div class="feedback-user <?php if($countNotas == 1) echo "wow fadeInDown"; ?>" <?php if($countNotas == 1) { ?> data-wow-duration="1s" data-wow-delay="0.7s" <?php } ?>>
+											 <img src="uploads/<?php echo $consultaNotas->imagem; ?>" class="img-circle" alt="<?php echo $consultaNotas->nome; ?>" />
+											 <span class="name"><?php echo $consultaNotas->nome; ?></span>
+											 <span class="text"><?php echo $consultaNotas->nota; ?></span>
+										  </div>
+									   </div>
+									</div>
+								</div>
+						<?php
+								$countNotas++;
+							}
+						?>
 					  </div>
 						<!-- Controls -->
 						<div class="carousel-control-container">
@@ -205,7 +214,6 @@
 					<div class="box-empresa opacity box-shadow"></div>
 					<div class="text-empresa">
 						<p>
-							A CEROCHA é uma das maiores fabricantes de móveis para banheiro e cozinha voltado ao varejo da construção civil, com representatividade em nível nacional. A experiência e a solidez no seguimento moveleiro conquistada pela CEROCHA ao  ongo dos anos proporcionou a definição de uma estratégia comercial de expansão de mercado.Desenvolveu-se então um projeto para produzir móveis planejados, com projetos personalizados, sofisticação e requinte, voltados para um público seleto e exigente.Nasceu a AUSTRINI, cuja identidade corporativa inspira-se no nome de uma das  principais estrelas do hemisfério sul, da constelação de peixes.<br /><br />
 							A AUSTRINI é uma empresa que desenvolve soluções diferenciadas e inovadoras, voltadas ao bem estar.<br /><br />
 							O núcleo do negócio é o desenvolvimento do design dos nossos produtos e projetos estruturais, com soluções técnicas diferenciadas e venda especializada.<br /><br />
 							<b>Missão</b><br /><br />
@@ -330,55 +338,43 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 col-md-offset-1 linha-1 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
-					<div class="col-md-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-						<a href="img/sala-1.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption">
-							<img src="img/thumb-salas.jpg" alt="Salas">
-						</a>
-						<a href="img/sala-2.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption" class="box-salas link-oculto"></a>
-						<a href="img/sala-3.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption" class="box-salas link-oculto"></a>
-						<a href="img/sala-4.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption" class="box-salas link-oculto"></a>
-						<a href="img/sala-5.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption" class="box-salas link-oculto"></a>
-						<a href="img/sala-6.jpg" title="Salas" data-lightbox="box-salas" data-title="My caption" class="box-salas link-oculto"></a>
-					</div>
-					<div class="col-md-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">
-						<a href="img/cozinha-1.jpg" title="Cozinhas" data-lightbox="box-cozinhas" class="box-cozinhas">
-							<img src="img/thumb-cozinhas.jpg" alt="Cozinhas">
-						</a>
-						<a href="img/cozinha-2.jpg" title="Cozinhas" data-lightbox="box-cozinhas" data-title="My caption" class="box-cozinhas link-oculto"></a>
-						<a href="img/cozinha-3.jpg" title="Cozinhas" data-lightbox="box-cozinhas" data-title="My caption" class="box-cozinhas link-oculto"></a>
-						<a href="img/cozinha-4.jpg" title="Cozinhas" data-lightbox="box-cozinhas" data-title="My caption" class="box-cozinhas link-oculto"></a>
-					</div>
-					<div class="col-md-4 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.7s">
-						<a href="img/banheiro-1.jpg" title="Banheiros" data-lightbox="box-banheiros" data-title="My caption" class="box-banheiros">
-							<img src="img/thumb-banheiros.jpg" alt="Banheiros">
-						</a>
-						<a href="img/banheiro-2.jpg" title="Banheiros" data-lightbox="box-banheiros" data-title="My caption" class="box-banheiros link-oculto"></a>
-						<a href="img/banheiro-3.jpg" title="Banheiros" data-lightbox="box-banheiros" data-title="My caption" class="box-banheiros link-oculto"></a>
-						<a href="img/banheiro-4.jpg" title="Banheiros" data-lightbox="box-banheiros" data-title="My caption" class="box-banheiros link-oculto"></a>
-					</div>
-				</div>
-				<div class="col-md-12 linha-2 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.7s">
-					<div class="col-md-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.8s">
-						<a href="" title="Dormitórios" class="colorbox">
-							<img src="img/thumb-dormitorios.jpg" alt="Dormitórios">
-						</a>
-					</div>
-					<div class="col-md-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.9s">
-						<a href="" title="Closet" class="colorbox">
-							<img src="img/thumb-closet.jpg" alt="Closet">
-						</a>
-					</div>
-					<div class="col-md-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.0s">
-						<a href="" title="Lavanderias" class="colorbox">
-							<img src="img/thumb-lavanderias.jpg" alt="Lavanderias">
-						</a>
-					</div>
-					<div class="col-md-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s">
-						<a href="" title="Corporativos" class="colorbox">
-							<img src="img/thumb-corporativos.jpg" alt="Corporativos">
-						</a>
-					</div>
+				<div class="col-md-12 linha-1 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
+					<?php
+		                $sqlConsultaAmbientes		= "SELECT *, date_format(data, '%d/%m') AS data FROM ambientes WHERE status = 1 ORDER by id DESC";
+		                $resultConsultaAmbientes	= consulta_db($sqlConsultaAmbientes);
+		                while($consultaAmbientes	= mysql_fetch_object($resultConsultaAmbientes)){
+		            ?>
+							<div class="col-md-3 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+							<?php
+								$countAmbientesImagens = 1;
+				                $sqlConsultaAmbientesImagens		= "SELECT * FROM ambientes_imagens WHERE status = 1 AND id_ambiente = $consultaAmbientes->id ORDER by id DESC";
+				               	$resultConsultaAmbientesImagens		= consulta_db($sqlConsultaAmbientesImagens);
+				               	$numRowsAmbientesImagens       		= mysql_num_rows($resultConsultaAmbientesImagens);
+				               	if($numRowsAmbientesImagens >= 1){
+				               		while($consultaAmbientesImagens	= mysql_fetch_object($resultConsultaAmbientesImagens)){
+				            ?>
+										<a href="uploads/<?php echo $consultaAmbientesImagens->imagem; ?>" title="<?php echo $consultaAmbientes->nome; ?>" data-lightbox="box-<?php echo strtolower($consultaAmbientes->nome); ?>" data-title="<?php echo $consultaAmbientes->nome; ?>" class="box-salas <?php if($countAmbientesImagens > 1) echo "link-oculto"; ?>">
+											<?php
+												if($countAmbientesImagens == 1){
+											?>
+													<img src="uploads/<?php echo $consultaAmbientes->imagem; ?>" alt="<?php echo $consultaAmbientes->nome; ?>">
+													<span class="titulo-ambiente"><?php echo strtoupper($consultaAmbientes->nome); ?></span>
+											<?php } ?>
+										</a>
+							<?php
+										$countAmbientesImagens++;
+									}
+								} else {
+							?>
+									<a href="#" title="<?php echo $consultaAmbientes->nome; ?>" data-lightbox="box-<?php echo strtolower($consultaAmbientes->nome); ?>" data-title="<?php echo $consultaAmbientes->nome; ?>" class="box-salas">
+										<img src="uploads/<?php echo $consultaAmbientes->imagem; ?>" alt="<?php echo $consultaAmbientes->nome; ?>">
+										<span class="titulo-ambiente"><?php echo strtoupper($consultaAmbientes->nome); ?></span>
+									</a>
+							<?php
+								}
+							?>
+							</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -388,60 +384,20 @@
 			<h2 class="section-title">NOTÍCIAS</h2>
 		</div>
 		<div class="container" id="article-list">
-			<article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>
-            <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>
-            <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>
-            <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>
-            <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.7s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>
-            <article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.8s">
-                <header>
-                    <img src="img/noticia-destaque-1.jpg" class="img-responsive" alt="Blog images" />
-                    <span class="post-date">1 Feb</span>
-                    <span class="post-author">Posted by Admin</span>
-                    <h2 class="post-title">Lorem Ipsum sit amen</h2>
-                </header>
-                <span class="post-container">Vestibulum nec lorem sed justo scelerisque consequat ut ac lorem. Lorem ipsum dolor sit amet, consectetur.</span>
-            </article>			
+			<?php
+                $sqlConsultaNoticias2		= "SELECT *, date_format(data, '%d/%m') AS data FROM noticias WHERE status = 1 ORDER by data DESC";
+                $resultConsultaNoticias2	= consulta_db($sqlConsultaNoticias2);
+                while($consultaNoticias2	= mysql_fetch_object($resultConsultaNoticias2)){
+            ?>
+					<article class="post item wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
+		                <header>
+		                    <img src="uploads/<?php echo $consultaNoticias2->imagem; ?>" class="img-responsive" alt="<?php echo $consultaNoticias2->titulo; ?>" />
+		                    <span class="post-date"><?php echo formata_data_austrini($consultaNoticias2->data); ?></span>
+		                    <h2 class="post-title"><?php echo $consultaNoticias2->titulo; ?></h2>
+		                </header>
+		                <span class="post-container"><?php echo $consultaNoticias2->texto; ?></span>
+		            </article>
+		    <?php } ?>
 		</div>
 	</section>
 	<section id="sustentabilidade">
