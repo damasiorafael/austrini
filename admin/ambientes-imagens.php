@@ -11,12 +11,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Eventos
+                        Imagens de Ambientes
                         <small>Austrini</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Eventos</li>
+                        <li class="active">Imagens de Ambientes</li>
                     </ol>
                 </section>
 
@@ -26,14 +26,15 @@
                         <div class="col-xs-12">
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">Lista de Eventos</h3>
+                                    <h3 class="box-title">Imagens de Ambientes</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
-                                    <a href="eventos-add-edit.php" class="btn btn-success btn-lg btn-adicionar pull-right"><i class="fa fa-plus"></i> Adicionar</a>
+                                    <a href="ambientes-imagens-add-edit.php" class="btn btn-success btn-lg btn-adicionar pull-right"><i class="fa fa-plus"></i> Adicionar</a>
                                     <table id="example2" class="table table-bordered table-hover table-austrini">
                                         <thead>
                                             <tr>
                                                 <th class="th-id">ID</th>
+                                                <th class="th-titulo">Ambiente</th>
                                                 <th>Imagem</th>
                                                 <th class="th-data">Data</th>
                                                 <th class="th-status">Status</th>
@@ -42,13 +43,22 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $sqlConsulta    = "SELECT *, date_format(data, '%d/%m/%Y') AS data FROM eventos";
+                                                $sqlConsulta    = "SELECT *, date_format(data, '%d/%m/%Y') AS data FROM ambientes_imagens";
                                                 $resultConsulta = consulta_db($sqlConsulta);
                                                 $num_rows       = mysql_num_rows($resultConsulta);
                                                 while($consulta = mysql_fetch_object($resultConsulta)){
                                             ?>
                                             <tr>
                                                 <td class="content-id"><?php echo $consulta->id; ?></td>
+                                                <td class="content-titulo">
+                                                    <?php
+                                                        $sqlConsultaAmbiente    = "SELECT nome AS nome_ambiente FROM ambientes WHERE id = $consulta->id_ambiente LIMIT 1";
+                                                        $resultConsultaAmbiente = consulta_db($sqlConsultaAmbiente);
+                                                        while($consultaAmbientes = mysql_fetch_object($resultConsultaAmbiente)){
+                                                            echo $consultaAmbientes->nome_ambiente;
+                                                        }
+                                                    ?>
+                                                </td>
                                                 <td class="content-img">
                                                     <img src="../uploads/<?php echo $consulta->imagem; ?>" />
                                                 </td>
@@ -66,8 +76,7 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td class="content-botoes-acoes">
-                                                    <a href="eventos-add-edit.php?id=<?php echo $consulta->id; ?>&acao=edit" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i> Editar</a>
-                                                    <a href="eventos-acoes.php?id=<?php echo $consulta->id; ?>&acao=delete" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-times"></i> Excluir</a>
+                                                    <a href="ambientes-imagens-acoes.php?id=<?php echo $consulta->id; ?>&acao=delete" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-times"></i> Excluir</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
@@ -75,6 +84,7 @@
                                         <tfoot>
                                             <tr>
                                                 <th class="th-id">ID</th>
+                                                <th class="th-titulo">Ambiente</th>
                                                 <th>Imagem</th>
                                                 <th class="th-data">Data</th>
                                                 <th class="th-status">Status</th>

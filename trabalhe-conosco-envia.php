@@ -8,22 +8,26 @@ $usuario = "damasio.rafael@gmail.com";
 $senha = "Damasio.8560";
 
 // Datamail
-$nome      	= protecao($_POST['nome']);
-$email   	= stripslashes( protecao($_POST['email']) );
-$cidade  	= protecao($_POST['cidade']);
-$telefone 	= strtolower( protecao($_POST['telefone']) );
-$mensagem  	= stripslashes( nl2br( protecao($_POST['mensagem']) ) );
+$nome      		= protecao($_POST['nome']);
+$email   		= stripslashes( protecao($_POST['email']) );
+$arrayArquivos 	= $_FILES['arquivo'];
 
-function insereContato($nome, $email, $cidade, $telefone, $mensagem){
-	$sqlInsereContato = "INSERT INTO contatos (nome, email, cidade, telefone, mensagem, data) VALUES ('$nome', '$email', '$cidade', '$telefone', '$mensagem', NOW());";
+function insereCurriculo($nome, $email, $arquivo){
+	$sqlInsereContato = "INSERT INTO trabalhe (nome, email, arquivo, data) VALUES ('$nome', '$email', '$arquivo', NOW());";
 	//exit();
-	return insert_db($sqlInsereContato);
+	if(insert_db($sqlInsereContato)){
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // Field Control
-if ( empty( $nome ) || empty( $email ) || empty( $telefone ) || empty( $mensagem ) || empty( $cidade )){
-	print( 'Por favor, preencha todos os campos.' );
-	exit;
+if(!isset($arrayArquivos)){
+	if ( empty( $nome ) || empty( $email )){
+		print( 'Por favor, preencha todos os campos.' );
+		exit;
+	}
 }
 
 // Email Control
@@ -32,6 +36,36 @@ if ( !preg_match( "/^[a-z0-9_\.\-]+@[a-z0-9\-\.]+\.[a-z]{2,4}$/", $email ) ){
 	exit;
 }
 
+function uploadImg($nome, $email, $arrayArquivos){
+	
+    $pasta = "uploads/";
+    
+    //FAZ O UPLOAD DAS IMAGENS ENQUANTO EXISTIREM
+    $nome_arquivos  	= $arrayArquivos['name'];
+    $tamanho_arquivos	= $arrayArquivos['size'];
+
+    /* pega a extensão do arquivo */
+    $ext = strtolower(strrchr($nome_arquivos,"."));
+        
+    /* converte o tamanho para KB */
+    $tamanho = round($tamanho_arquivos / 1024);
+	if($tamanho < 1024){ //se o arquivo for até 1MB envia
+        $nome_atual = md5(uniqid(time())).$ext; //nome que dará ao arquivo
+        $tmp = $arrayArquivos['tmp_name']; //caminho temporário do arquivo
+        if(move_uploaded_file($tmp,$pasta.$nome_atual)){
+        	//ACAO PARA SALVAR NO BANCO
+        	return insereCurriculo($nome, $email, $nome_atual);
+        } else {
+        	//Falha no UPLOAD;
+        	echo "<script type='text/javascript'>alert('Falha ao enviar!'); history.back();</script>";
+        	exit();
+        }
+    } else {
+        //Falha no tamanho do arquivo
+        echo "<script type='text/javascript'>alert('O arquivo deve ter no máximo 1MB!'); history.back();</script>";
+        exit();
+    }
+}
 
 /*********************************** A PARTIR DAQUI NAO ALTERAR ************************************/
 include_once("inc/phpmailer/class.phpmailer.php");
@@ -71,7 +105,7 @@ $mail->AddAddress($To);
 
 //echo $body;
 
-if(insereContato($nome, $email, $cidade, $telefone, $mensagem)){
+if(uploadImg($nome, $email, $arrayArquivos)){
 	echo "<script type='text/javascript'>alert('Mensagem enviada com sucesso!'); window.location = 'index.php';</script>";
 	//echo 'sucesso';
 	exit();

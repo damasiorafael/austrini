@@ -308,10 +308,10 @@
 		<div class="row form-container wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
 			<div class="container">
 				<div class="col-md-8 col-md-offset-2">
-					<form data-toggle="validator" data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInDown animated" action="trabalhe.php" method="post" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInDown;" enctype="multipart/form-data">
+					<form data-toggle="validator" data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInDown animated" action="trabalhe-conosco-envia.php" method="post" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInDown;" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-md-12">
-								<input type="text" required="" placeholder="Nome" id="name" name="name" class="form-control">
+								<input type="text" required="" placeholder="Nome" id="nome" name="nome" class="form-control">
 								<input type="email" required="" placeholder="E-mail" id="email" name="email" class="form-control">
 								<input type="file" required="" placeholder="Selecione um arquivo" id="arquivo" name="arquivo" class="form-control">
 							</div>
@@ -460,12 +460,12 @@
 		<div class="row form-container wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">
 			<div class="container">
 				<div class="col-md-8 col-md-offset-2">
-					<form data-toggle="validator" data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInDown animated" action="trabalhe.php" method="post" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInDown;" enctype="multipart/form-data">
+					<form data-toggle="validator" data-wow-delay="0.5s" data-wow-duration="1s" class="wow fadeInDown animated" action="tenha-loja-envia.php" method="post" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInDown;" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-md-12">
-								<input type="text" required="" placeholder="Nome" id="name" name="name" class="form-control">
+								<input type="text" required="" placeholder="Nome" id="nome" name="nome" class="form-control">
 								<input type="email" required="" placeholder="E-mail" id="email" name="email" class="form-control">
-								<input type="tel" required="" placeholder="Telefone" id="phone" name="phone" class="form-control">
+								<input type="tel" required="" placeholder="Telefone" id="telefone" name="telefone" class="form-control">
 							</div>
 							<div class="col-md-12">
 								<button class="btn btn-default btn-lg pull-right" type="submit">Enviar</button>
@@ -505,19 +505,19 @@
 							<form method="post" action="contacts.php" class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" data-toggle="validator">
 								<div class="row">
 									<div class="col-md-6">
-										<input type="text" class="form-control" name="name" id="name" placeholder="Nome" required>
+										<input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" required>
 									</div>
 									<div class="col-md-6">
-										<input type="text" class="form-control" name="city" id="city" placeholder="Cidade" required>
+										<input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade" required>
 									</div>
 									<div class="col-md-6">
 										<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
 									</div>
 									<div class="col-md-6">
-										<input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+										<input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Telefone" required>
 									</div>
 									<div class="col-md-12">
-										<textarea class="form-control" name="message" id="message" rows="3" placeholder="Mensagem" required></textarea>
+										<textarea class="form-control" name="mensagem" id="mensagem" rows="3" placeholder="Mensagem" required></textarea>
 										<button type="submit" class="btn btn-default btn-lg">Enviar</button>
 									</div>
 								</div>

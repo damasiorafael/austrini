@@ -10,18 +10,16 @@ $senha = "Damasio.8560";
 // Datamail
 $nome      	= protecao($_POST['nome']);
 $email   	= stripslashes( protecao($_POST['email']) );
-$cidade  	= protecao($_POST['cidade']);
 $telefone 	= strtolower( protecao($_POST['telefone']) );
-$mensagem  	= stripslashes( nl2br( protecao($_POST['mensagem']) ) );
 
-function insereContato($nome, $email, $cidade, $telefone, $mensagem){
-	$sqlInsereContato = "INSERT INTO contatos (nome, email, cidade, telefone, mensagem, data) VALUES ('$nome', '$email', '$cidade', '$telefone', '$mensagem', NOW());";
+function insereContato($nome, $email, $telefone){
+	$sqlInsereContato = "INSERT INTO tenha_loja (nome, email, telefone, data) VALUES ('$nome', '$email', '$telefone', NOW());";
 	//exit();
 	return insert_db($sqlInsereContato);
 }
 
 // Field Control
-if ( empty( $nome ) || empty( $email ) || empty( $telefone ) || empty( $mensagem ) || empty( $cidade )){
+if ( empty( $nome ) || empty( $email ) || empty( $telefone )){
 	print( 'Por favor, preencha todos os campos.' );
 	exit;
 }
@@ -41,9 +39,7 @@ $Subject = utf8_decode("Mensagem através do site");
 $bodyMensagem = "";
 $bodyMensagem .= "<strong>Nome:</strong> ".utf8_encode($nome)." <br />";
 $bodyMensagem .= "<strong>E-mail:</strong> $email <br />";
-$bodyMensagem .= "<strong>Cidade:</strong> ".utf8_encode($cidade)." <br />";
 $bodyMensagem .= "<strong>Telefone:</strong> ".$telefone." <br />";
-$bodyMensagem .= "<strong>Mensagem:</strong> ".utf8_encode($mensagem);
 $Message = $bodyMensagem;
 
 $Host = "smtp.gmail.com";
@@ -71,7 +67,7 @@ $mail->AddAddress($To);
 
 //echo $body;
 
-if(insereContato($nome, $email, $cidade, $telefone, $mensagem)){
+if(insereContato($nome, $email, $telefone)){
 	echo "<script type='text/javascript'>alert('Mensagem enviada com sucesso!'); window.location = 'index.php';</script>";
 	//echo 'sucesso';
 	exit();

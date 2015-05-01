@@ -29,7 +29,12 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        4
+                                        <?php
+                                            $sqlConsultaBanners     = "SELECT id FROM galerias";
+                                            $resultConsultaBanners  = consulta_db($sqlConsultaBanners);
+                                            $num_rows_banners       = mysql_num_rows($resultConsultaBanners);
+                                            echo $num_rows_banners;
+                                        ?>
                                     </h3>
                                     <p>
                                         Banners ativos
@@ -48,7 +53,12 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        5
+                                        <?php
+                                            $sqlConsultaEventos     = "SELECT id FROM eventos";
+                                            $resultConsultaEventos  = consulta_db($sqlConsultaEventos);
+                                            $num_rows_eventos       = mysql_num_rows($resultConsultaEventos);
+                                            echo $num_rows_eventos;
+                                        ?>
                                     </h3>
                                     <p>
                                         Eventos ativos
@@ -67,7 +77,12 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                        <?php
+                                            $sqlConsultaNoticias     = "SELECT id FROM noticias";
+                                            $resultConsultaNoticias  = consulta_db($sqlConsultaNoticias);
+                                            $num_rows_noticias       = mysql_num_rows($resultConsultaNoticias);
+                                            echo $num_rows_noticias;
+                                        ?>
                                     </h3>
                                     <p>
                                         Notícias ativas
@@ -86,7 +101,12 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        2
+                                        <?php
+                                            $sqlConsultaNotas     = "SELECT id FROM notas";
+                                            $resultConsultaNotas  = consulta_db($sqlConsultaNotas);
+                                            $num_rows_notas       = mysql_num_rows($resultConsultaNotas);
+                                            echo $num_rows_notas;
+                                        ?>
                                     </h3>
                                     <p>
                                         Notas dos arquitetos ativas
@@ -105,7 +125,12 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        2
+                                        <?php
+                                            $sqlConsultaTrabalhe     = "SELECT id FROM trabalhe";
+                                            $resultConsultaTrabalhe  = consulta_db($sqlConsultaTrabalhe);
+                                            $num_rows_trabalhe       = mysql_num_rows($resultConsultaTrabalhe);
+                                            echo $num_rows_trabalhe;
+                                        ?>
                                     </h3>
                                     <p>
                                         Currículos não lidos
@@ -114,7 +139,7 @@
                                 <div class="icon">
                                     <i class="fa fa-building-o"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="trabalhe-conosco.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -124,7 +149,12 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                        <?php
+                                            $sqlConsultaAmbientes     = "SELECT id FROM ambientes";
+                                            $resultConsultaAmbientes  = consulta_db($sqlConsultaAmbientes);
+                                            $num_rows_ambientes       = mysql_num_rows($resultConsultaAmbientes);
+                                            echo $num_rows_ambientes;
+                                        ?>
                                     </h3>
                                     <p>
                                         Ambientes ativos
@@ -133,7 +163,7 @@
                                 <div class="icon">
                                     <i class="fa fa-home"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="ambientes.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -143,7 +173,12 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        25
+                                        <?php
+                                            $sqlConsultaTenhaLoja     = "SELECT id FROM ambientes";
+                                            $resultConsultaTenhaLoja  = consulta_db($sqlConsultaTenhaLoja);
+                                            $num_rows_tenha       = mysql_num_rows($resultConsultaTenhaLoja);
+                                            echo $num_rows_tenha;
+                                        ?>
                                     </h3>
                                     <p>
                                         Novos interessados ter uma loja
@@ -152,7 +187,7 @@
                                 <div class="icon">
                                     <i class="fa fa-dollar"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="tenha-loja.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -162,7 +197,12 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        25
+                                        <?php
+                                            $sqlConsultaContato     = "SELECT id FROM contatos";
+                                            $resultConsultaContato  = consulta_db($sqlConsultaContato);
+                                            $num_rows_contato       = mysql_num_rows($resultConsultaContato);
+                                            echo $num_rows_contato;
+                                        ?>
                                     </h3>
                                     <p>
                                         Contatos novos
@@ -171,7 +211,7 @@
                                 <div class="icon">
                                     <i class="fa fa-envelope"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="fale-conosco.php" class="small-box-footer">
                                     Acessar <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

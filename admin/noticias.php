@@ -44,7 +44,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $sqlConsulta    = "SELECT * FROM noticias";
+                                                $sqlConsulta    = "SELECT *, date_format(data, '%d/%m/%Y') AS data FROM noticias";
                                                 $resultConsulta = consulta_db($sqlConsulta);
                                                 $num_rows       = mysql_num_rows($resultConsulta);
                                                 while($consulta = mysql_fetch_object($resultConsulta)){
@@ -56,7 +56,7 @@
                                                 <td class="content-img">
                                                     <img src="../uploads/<?php echo $consulta->imagem; ?>" />
                                                 </td>
-                                                <td class="content-data"><?php echo formata_data($consulta->data); ?></td>
+                                                <td class="content-data"><?php echo $consulta->data; ?></td>
                                                 <td class="content-status">
                                                     <?php 
                                                     if($consulta->status == 1){ ?>

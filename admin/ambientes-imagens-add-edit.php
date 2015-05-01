@@ -16,12 +16,12 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Eventos
+                        Imagens de Ambientes
                         <small>Adicionar/Editar</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="eventos.php"><i class="fa fa-calendar-o"></i> Eventos</a></li>
+                        <li><a href="ambientes-imagens.php"><i class="fa fa-home"></i>Imagens de Ambientes</a></li>
                         <li class="active">Adicionar/Editar</li>
                     </ol>
                 </section>
@@ -32,39 +32,30 @@
                         <div class="col-xs-12">
                             <div class="box box-primary">
                                 <div class="box-header">
-                                    <?php if($id != "" && $acao != ""){ ?>
-                                        <h3 class="box-title">Editar Evento</h3>
-                                    <?php } else { ?>
-                                        <h3 class="box-title">Adicionar Evento</h3>
-                                    <?php } ?>
+                                    <h3 class="box-title">Adicionar Imagens de Ambientes</h3>
                                 </div><!-- /.box-header -->
                                 <!-- form start -->
-                                <form action="eventos-acoes.php" method="post" enctype="multipart/form-data" validate>
+                                <form action="ambientes-imagens-acoes.php" method="post" enctype="multipart/form-data" validate>
                                     <div class="box-body">
-                                        <div class="form-group">
-                                            <?php if($id != "" && $acao != ""){
-                                                    $sqlConsulta    = "SELECT * FROM eventos WHERE id = $id AND status = 1";
+                                            <div class="form-group">
+                                                <label for="nome">Ambiente</label>
+                                                <select class="form-control" id="id_ambiente" name="id_ambiente" required>
+                                                    <option value=""> -- Selecione um ambiente -- </option>
+                                                <?php
+                                                    $sqlConsulta    = "SELECT nome, id FROM ambientes ORDER by id ASC";
                                                     $resultConsulta = consulta_db($sqlConsulta);
                                                     $num_rows       = mysql_num_rows($resultConsulta);
                                                     while($consulta = mysql_fetch_object($resultConsulta)){
-                                            ?>
-                                                        <div class="img-edit">
-                                                            <img src="../uploads/<?php echo $consulta->imagem; ?>" />
-                                                        </div>
-                                                        <input type="hidden" id="id" name="id" value="<?php echo $consulta->id; ?>" required />
-                                                        <input type="hidden" id="acao" name="acao" value="edit" required />
-                                            <?php
-                                                    }
-                                                }
-                                            ?>
-                                            <?php if($id != "" && $acao != ""){ ?>
-                                                <label for="imagem">Altere a imagem</label>
-                                            <?php } else { ?>
+                                                ?>
+                                                        <option value="<?php echo $consulta->id; ?>"><?php echo $consulta->nome; ?></option>
+                                                <?php } ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="imagem">Adicione a imagem</label>
-                                            <?php } ?>
                                             <input type="file" id="imagem" name="imagem" required /><br />
                                             <div class="callout callout-danger">
-                                                <h4>A imagem deve ser maior que 1024 x 715 pixels, respeitar essa proporção e ter menos de 1MB.</h4>
+                                                <h4>A imagem deve ter o tamanho mínimo de 800 x 600 pixels e ter menos de 2MB.</h4>
                                             </div>
                                         </div>
                                     </div><!-- /.box-body -->

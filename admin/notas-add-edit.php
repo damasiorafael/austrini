@@ -21,7 +21,7 @@
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="notas.php"><i class="fa fa-file-image-o"></i> Notas dos Arquitetos</a></li>
+                        <li><a href="notas.php"><i class="fa fa-edit"></i> Notas dos Arquitetos</a></li>
                         <li class="active">Adicionar/Editar</li>
                     </ol>
                 </section>
