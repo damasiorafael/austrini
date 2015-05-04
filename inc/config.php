@@ -4,17 +4,30 @@ session_start();
 //error_reporting(E_ALL);
 error_reporting(E_ERROR);
 
+/*if($_SERVER['SERVER_NAME'] == "localhost"){
+	$host 	= "localhost";
+	$user	= "root";
+	$pass	= "";
+	$bd		= "austrini";
+} else {
+	$host 	= "austrini.com.br";
+	$user	= "austrini_site";
+	$pass	= "@us#12#trini";
+	$bd		= "austrini_site";
+}*/
+
 if($_SERVER['SERVER_NAME'] == "localhost"){
 	$host 	= "localhost";
 	$user	= "root";
 	$pass	= "";
 	$bd		= "austrini";
 } else {
-	$host 	= "";
-	$user	= "";
-	$pass	= "";
-	$bd		= "";
+	$host 	= "rafaeldamasio.com";
+	$user	= "austrini";
+	$pass	= "@us#12#trini";
+	$bd		= "austrini_site";
 }
+
 
 //$con = mysql_pconnect('localhost','root','');
 //$db = mysql_select_db('construpaver');

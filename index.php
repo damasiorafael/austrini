@@ -443,7 +443,7 @@
 						<div class="col-md-12">
 							<a href="#" class="icon-container col-md-offset-2">
 								<span class="icon glyphicon glyphicon-earphone"></span>
-								(17) 3242-9836
+								(17) 3253-9400
 							</a>
 							<a href="#" class="icon-container col-md-offset-2">
 								<span class="icon glyphicon glyphicon-send"></span>
