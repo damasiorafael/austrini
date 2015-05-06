@@ -196,7 +196,7 @@
 					<div class="col-md-4 col-sm-6 col-xs-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
 						<span class="title">JUNTE-SE A NÓS</span>
 						<ul class="social-icons">
-							<li><a class="facebook-icon" href="#"><span>facebook</span></a></li>
+							<li><a class="facebook-icon" href="https://www.facebook.com/pages/Austrini-m%C3%B3veis-planejados/284577651696770" target="_blank"><span>facebook</span></a></li>
 							<li><a class="linkedin-icon" href="#"><span>instagran</span></a></li>
 						</ul>
 					</div>

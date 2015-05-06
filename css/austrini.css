@@ -659,7 +659,8 @@ input, select, textarea { background-color: #41499C!important; color: #FFF!impor
 input[type="file"] {
     cursor: pointer;
     display: block;
-    font-size: 999px;
+    font-size: 9999px;
+    text-indent: 3000em;
     opacity: 1;
     position: relative;
     text-align: left;
@@ -679,7 +680,7 @@ input[type="file"] {
 #ambientes .linha-1 { margin-top: 60px;}
 #ambientes .linha-1 img { margin-bottom: 0;}
 #ambientes a { position: relative;}
-#ambientes a .titulo-ambiente { position: absolute; width: 228px; text-align: center; font-size: 28px; z-index: 999; top: 154px; color: #FFF; font-weight: bold;}
+#ambientes a .titulo-ambiente { position: absolute; width: 228px; text-align: center; font-size: 28px; z-index: 999; top: 154px; color: #FFF; font-weight: bold; display: none;}
 .link-oculto { display: none;}
 
 
