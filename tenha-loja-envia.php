@@ -3,9 +3,14 @@
 include_once("inc/config.php");
 
 // Configuration
-$email_site = "damasio_damasio@hotmail.com";
+/*$email_site = "damasio_damasio@hotmail.com";
 $usuario = "damasio.rafael@gmail.com";
 $senha = "Damasio.8560";
+*/
+
+$email_site = "marcelo.ceron@cerocha.com.br";
+$usuario = "marcelo.ceron@cerocha.com.br";
+$senha = "rQ3#54xv";
 
 // Datamail
 $nome      	= protecao($_POST['nome']);
@@ -42,10 +47,10 @@ $bodyMensagem .= "<strong>E-mail:</strong> $email <br />";
 $bodyMensagem .= "<strong>Telefone:</strong> ".$telefone." <br />";
 $Message = $bodyMensagem;
 
-$Host = "smtp.gmail.com";
+$Host = "webmail.cerocha.com.br";
 $Username = $usuario;
 $Password = $senha;
-$Port = 587;
+$Port = 25;
 
 $mail = new PHPMailer();
 $body = $Message;
@@ -55,7 +60,7 @@ $mail->SMTPDebug = 1; // enables SMTP debug information (for testing)
 // 1 = errors and messages
 // 2 = messages only
 $mail->SMTPAuth = true; // enable SMTP authentication
-$mail->SMTPSecure = "tls";	// SSL REQUERIDO pelo GMail
+//$mail->SMTPSecure = "tls";	// SSL REQUERIDO pelo GMail
 $mail->Port = $Port; // set the SMTP port for the service server
 $mail->Username = $Username; // account username
 $mail->Password = $Password; // account password
@@ -72,12 +77,13 @@ if(insereContato($nome, $email, $telefone)){
 	//echo 'sucesso';
 	exit();
 	if(!$mail->Send()){
-		echo 'Erro ao enviar e-mail: '. print($mail->ErrorInfo);
+		echo "Erro ao enviar e-mail: ". print($mail->ErrorInfo);
 	} else {
 		echo 'sucesso';
+		echo "<script type='text/javascript'>alert('Mensagem enviada com sucesso!'); window.location = 'index.php';</script>";
 	}
 } else {
-	echo "<script type='text/javascript'>alert('Mensagem enviada com sucesso!'); history.back();</script>";
+	echo "<script type='text/javascript'>alert('Erro ao enviar a mensagem, por favor, tente novamente!'); history.back();</script>";
 }
 
 ?>

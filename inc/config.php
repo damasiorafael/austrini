@@ -4,7 +4,7 @@ session_start();
 //error_reporting(E_ALL);
 error_reporting(E_ERROR);
 
-/*if($_SERVER['SERVER_NAME'] == "localhost"){
+if($_SERVER['SERVER_NAME'] == "localhost"){
 	$host 	= "localhost";
 	$user	= "root";
 	$pass	= "";
@@ -14,8 +14,9 @@ error_reporting(E_ERROR);
 	$user	= "austrini_site";
 	$pass	= "@us#12#trini";
 	$bd		= "austrini_site";
-}*/
+}
 
+/*
 if($_SERVER['SERVER_NAME'] == "localhost"){
 	$host 	= "localhost";
 	$user	= "root";
@@ -27,6 +28,7 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 	$pass	= "@us#12#trini";
 	$bd		= "austrini_site";
 }
+*/
 
 
 //$con = mysql_pconnect('localhost','root','');
